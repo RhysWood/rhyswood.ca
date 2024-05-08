@@ -1,0 +1,79 @@
+body {
+    font-family: 'NeueMontreal-Book';
+    margin: 0;
+    padding: 0;
+  }
+  .my-wrap {
+    position: relative;
+    height: 50vh;
+    color: #222;
+    display: grid;
+    place-content: center;
+  }
+
+  .lerp-wrap {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.25rem;
+    line-height: 1.1;
+  }
+  .lerp-wrap span {
+    position:relative;
+    color: #222;
+    width:100px;
+    height:100px;
+    display: inline-flex;
+    justify-content:center;
+    align-items:center;
+    font-size: clamp(64px, 6vw, 16vw);
+}
+
+.lerp-wrap span:nth-child(1) {
+  color: red;
+}
+
+.lerp-wrap span:nth-child(2) {
+  color: blue;
+}
+
+.lerp-wrap span:nth-child(3) {
+  color: green;
+}
+
+.lerp-wrap span:nth-child(4) {
+  color: yellow;
+}
+
+.lerp-wrap span:nth-child(5) {
+  color: pink;
+}
+
+.lerp-wrap span:nth-child(6) {
+  color: purple;
+}
+
+.lerp-wrap span:nth-child(7) {
+  color: orange;
+}
+
+.lerp-wrap span:nth-child(8) {
+  color: gray;
+}
+
+.lerp-wrap span:nth-child(9) {
+  color: black;
+}
+
+.lerp-wrap span:nth-child(10) {
+  color: coral;
+}
+
+.lerp-wrap span:nth-child(11) {
+  color: brown;
+}
+
+.lerp-wrap span:nth-child(12) {
+  color: navy;
+}
+
+  

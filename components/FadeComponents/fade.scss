@@ -1,0 +1,48 @@
+.fade-in-element {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 2s;
+  }
+  
+  .fade-in-element.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .fade-in-right-element {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 2s;
+  }
+  
+  .fade-in-right-element.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  
+  .fade-in-only {
+    opacity: 0;
+  }
+  
+  .fade-in-only.visible {
+    opacity: 1;
+  }
+
+  .text-line-animation {
+    font-size: 20px;
+    color: grey;
+  }
+  
+  .line {
+    transition: all 0.5s ease-in;
+  }
+  
+  .line.animated {
+    color: black
+  }
+  
+  .not {
+    border:none;
+  }
+  

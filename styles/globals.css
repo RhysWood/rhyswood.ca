@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'NeueMontreal-Book';
+  src: url(./fonts/PPNeueMontreal-Book.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'NeueMontreal-Bold';
+  src: url(./fonts/PPNeueMontreal-Bold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'NeueBit-Bold';
+  src: url(./fonts/PPNeueBit-Bold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'NeueBit-Regular';
+  src: url(./fonts/PPNeueBit-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'NeueMontreal-Italic';
+  src: url(./fonts/PPNeueMontreal-Italic.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'radio-reg';
+  src: url(./fonts/PPRadioGrotesk-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'RadioGrotesk-Ultralight';
+  src: url(./fonts/PPRadioGrotesk-Ultralight.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'SupplyMono-Regular';
+  src: url(./fonts/PPSupplyMono-Regular.woff) format('woff');
+}
+
+body {
+  color: rgb(0, 0, 0);
+  background: white;
+  &,
+  * {
+    cursor: none !important;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

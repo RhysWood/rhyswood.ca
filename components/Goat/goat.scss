@@ -1,0 +1,84 @@
+.goat {
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+  }
+  
+  .smooth-scroll-2 {
+    overflow: hidden !important;
+  }
+  
+  .min-h-50 {
+    min-height: 50vh;
+  }
+  
+  .min-h-100 {
+    min-height: 100vh;
+  }
+  
+  section {
+    width: 100vw;
+    color: white;
+    font-size: 40px;
+    font-weight: 800;
+  }
+  
+  
+  .red {
+    background: red;
+  }
+  
+  .blue {
+    background: blue;
+  }
+  
+  .green {
+    background: green;
+  }
+  
+  .purple {
+    background: purple;
+  }
+  
+  .pink {
+    background: pink;
+  }
+  
+  .horizontalScrolling {
+    padding-top: 125px;
+    padding-bottom: 125px;
+  }
+  
+  .horizontalScrolling .section-inner {
+    min-height: max-content;
+  }
+  
+  [data-scroll-in-section] {
+    display: inline-flex;
+    padding-right: 50px;
+  }
+  
+  .item {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+  }
+  
+  .item + .item {
+    margin-left: 25px;
+  }
+  
+  .sectionLeftAndRight .section-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  
+  section.afterHorizontal {
+    margin-top: -100vh;
+  }
