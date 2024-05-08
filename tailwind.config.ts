@@ -8,10 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        NeueMontrealBook: ["NeueMontreal-Book", "sans-serif"],
+        NeueMontrealRegular: ["NeueMontreal-Regular", "sans-serif"],
+        NeueMontrealBold: ["NeueMontreal-Bold", "sans-serif"],
+      },
+      colors: {
+        ricegreen: "#6dfeb0",
       },
     },
   },

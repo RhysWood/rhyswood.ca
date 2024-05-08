@@ -52,7 +52,10 @@
   }
 
   .intro-text {
-    grid-area: 1 / 2 / 2 / 3;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: flex-end; // Aligns items to the right
     width: 100%;
     font-weight: 800;
     background-color: black;
@@ -60,11 +63,9 @@
     border-radius: 25px;
     padding: 25px;
     font-size: 3vw;
-    line-height: 4vw;;
+    line-height: 4vw;
     font-family: 'RadioGrotesk-Ultralight';
-    text-align:justify;
-    text-align-last:justify;
-
+    margin-bottom: 50vh;
     p {
       opacity: 0;
       > div {

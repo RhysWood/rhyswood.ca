@@ -36,12 +36,12 @@ function Welcome() {
       <div className="intromove">
       <div className="h-screen w-[90%] pt-20 mx-auto grid relative place-items-center grid-cols-2 grid-rows-2">
         <div className="col-start-2 col-end-3 row-start-1 row-end-2 text-right mb-6">
-          <h1 className="text-9xl font-RadioGrotesk-Ultralight m-0">
+          <h1 className="text-9xl font-NeueMontrealBook">
             Full-Stack Developer
           </h1>
         </div>
         <div className="col-start-1 col-end-2 row-start-2 row-end-3 text-left">
-          <h1 className="font-RadioGrotesk-Ultralight text-[10vw] p-0 m-0 text-black">
+          <h1 className="font-NeueMontrealBook text-9xl leading-snug">
             Rhys Wood
           </h1>
         </div>

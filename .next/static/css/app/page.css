@@ -1,158 +1,3 @@
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[13].use[5]!./components/Lighthouse/lighthouse.scss ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-.lighthouse-container {
-  display: grid;
-  height: 100%;
-}
-
-.intro-wrapper-title {
-  display: flex;
-  flex-direction: column;
-  margin: 0% 10%;
-}
-
-.intro-text-title {
-  order: 1;
-  font-weight: 800;
-  font-size: 3vw;
-  line-height: 4vw;
-  font-family: "RadioGrotesk-Ultralight";
-}
-.intro-text-title p {
-  opacity: 0;
-}
-.intro-text-title p > div {
-  opacity: 0;
-  transform: translateY(0px);
-}
-.intro-text-title p.is-reveal {
-  opacity: 1;
-}
-
-@media only screen and (max-width: 900px) {
-  .wrapper {
-    display: flex;
-    height: 80vh;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: space-between;
-  }
-  .intro-wrapper-title {
-    width: 90%;
-    margin: 0 auto;
-    display: block;
-    position: relative;
-  }
-  .intro-text-title {
-    width: 100%;
-    font-weight: 800;
-    font-size: 7vw;
-    line-height: 8vw;
-    font-family: "RadioGrotesk-Ultralight";
-    text-align: justify;
-    text-align-last: justify;
-  }
-  .intro-text-title p {
-    opacity: 0;
-  }
-  .intro-text-title p > div {
-    opacity: 0;
-    transform: translateY(0px);
-  }
-  .intro-text-title p.is-reveal {
-    opacity: 1;
-  }
-}
-.lineChildren {
-  transform: translate(0, 500px);
-}
-
-.lineParent {
-  overflow: hidden;
-}
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[13].use[5]!./components/Lighthouse/title.scss ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-body {
-  font-family: "NeueMontreal-Book";
-  margin: 0;
-  padding: 0;
-}
-
-.my-wrap {
-  position: relative;
-  height: 50vh;
-  color: #222;
-  display: grid;
-  place-content: center;
-}
-
-.lerp-wrap {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 0.25rem;
-  line-height: 1.1;
-}
-
-.lerp-wrap span {
-  position: relative;
-  color: #222;
-  width: 100px;
-  height: 100px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  font-size: clamp(64px, 6vw, 16vw);
-}
-
-.lerp-wrap span:nth-child(1) {
-  color: red;
-}
-
-.lerp-wrap span:nth-child(2) {
-  color: blue;
-}
-
-.lerp-wrap span:nth-child(3) {
-  color: green;
-}
-
-.lerp-wrap span:nth-child(4) {
-  color: yellow;
-}
-
-.lerp-wrap span:nth-child(5) {
-  color: pink;
-}
-
-.lerp-wrap span:nth-child(6) {
-  color: purple;
-}
-
-.lerp-wrap span:nth-child(7) {
-  color: orange;
-}
-
-.lerp-wrap span:nth-child(8) {
-  color: gray;
-}
-
-.lerp-wrap span:nth-child(9) {
-  color: black;
-}
-
-.lerp-wrap span:nth-child(10) {
-  color: coral;
-}
-
-.lerp-wrap span:nth-child(11) {
-  color: brown;
-}
-
-.lerp-wrap span:nth-child(12) {
-  color: navy;
-}
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[13].use[5]!./components/Welcome/welcome.scss ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -209,7 +54,6 @@ body {
 }
 
 .intro-text {
-  grid-area: 1/2/2/3;
   width: 100%;
   font-weight: 800;
   background-color: black;
@@ -219,8 +63,7 @@ body {
   font-size: 3vw;
   line-height: 4vw;
   font-family: "RadioGrotesk-Ultralight";
-  text-align: justify;
-  text-align-last: justify;
+  margin-bottom: 50vh;
 }
 .intro-text p {
   opacity: 0;

@@ -561,21 +561,18 @@ video {
 .row-end-3 {
   grid-row-end: 3;
 }
-.m-0 {
-  margin: 0px;
-}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
-.mt-10 {
-  margin-top: 2.5rem;
-}
-.mt-20 {
-  margin-top: 5rem;
-}
 .mb-6 {
   margin-bottom: 1.5rem;
+}
+.ml-\[40vh\] {
+  margin-left: 40vh;
+}
+.mr-28 {
+  margin-right: 7rem;
 }
 .block {
   display: block;
@@ -586,23 +583,23 @@ video {
 .inline {
   display: inline;
 }
+.flex {
+  display: flex;
+}
 .grid {
   display: grid;
-}
-.h-\[95\%\] {
-  height: 95%;
 }
 .h-screen {
   height: 100vh;
 }
-.h-full {
-  height: 100%;
+.w-1\/2 {
+  width: 50%;
 }
 .w-\[90\%\] {
   width: 90%;
 }
-.w-full {
-  width: 100%;
+.grow {
+  flex-grow: 1;
 }
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -613,26 +610,14 @@ video {
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-.grid-rows-\[auto\2c auto\] {
-  grid-template-rows: auto auto;
-}
 .grid-rows-2 {
   grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 .place-items-center {
   place-items: center;
 }
-.p-0 {
-  padding: 0px;
-}
-.pt-\[5rem\] {
-  padding-top: 5rem;
-}
-.pt-6 {
-  padding-top: 1.5rem;
-}
-.pt-12 {
-  padding-top: 3rem;
+.justify-end {
+  justify-content: flex-end;
 }
 .pt-20 {
   padding-top: 5rem;
@@ -643,16 +628,19 @@ video {
 .text-right {
   text-align: right;
 }
+.font-NeueMontrealBook {
+  font-family: NeueMontreal-Book, sans-serif;
+}
 .text-9xl {
   font-size: 8rem;
   line-height: 1;
 }
-.text-\[10vw\] {
-  font-size: 10vw;
+.leading-snug {
+  line-height: 1.375;
 }
-.text-black {
+.text-ricegreen {
   --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+  color: rgb(109 254 176 / var(--tw-text-opacity));
 }
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -703,6 +691,7 @@ video {
 body {
   color: rgb(0, 0, 0);
   background: white;
+  
   &,
   * {
     cursor: none !important;
@@ -799,7 +788,7 @@ body {
 }
 
 .nav-links:hover {
-  color: #fe6d73;
+  color: #6dfeb0;
   border-radius: 4px;
   transition: all 0.2s ease-out;
 }
