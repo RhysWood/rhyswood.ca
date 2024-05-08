@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import SplitText from '../utils/Split3.min.js';
 import gsap from 'gsap';

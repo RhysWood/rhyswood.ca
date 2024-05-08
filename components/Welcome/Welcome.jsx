@@ -7,13 +7,13 @@ import SplitText from '../utils/Split3.min.js';
 function Welcome() {
 
   useEffect(() => {
-    const split = new SplitText(".block", {
+    const split = new SplitText(".intromove", {
       type: "lines",
       linesClass: "lineChildren",
     });
     
  // eslint-disable-next-line 
-    const splitParent = new SplitText(".block", {
+    const splitParent = new SplitText(".intromove", {
       type: "lines",
       linesClass: "lineParent",
     });
@@ -33,10 +33,11 @@ function Welcome() {
       data-scroll-section  
     >
     <div className="h-screen">
-    <div className="h-[95%] w-[90%] pt-[5rem] mx-auto grid relative place-items-center grid-cols-2 grid-rows-[auto,auto]">
-        <div className="col-start-2 col-end-3 row-start-1 row-end-2 text-right">
+      <div className="intromove">
+      <div className="h-screen w-[90%] pt-20 mx-auto grid relative place-items-center grid-cols-2 grid-rows-2">
+        <div className="col-start-2 col-end-3 row-start-1 row-end-2 text-right mb-6">
           <h1 className="text-9xl font-RadioGrotesk-Ultralight m-0">
-            Full-Stack Devloper
+            Full-Stack Developer
           </h1>
         </div>
         <div className="col-start-1 col-end-2 row-start-2 row-end-3 text-left">
@@ -44,6 +45,7 @@ function Welcome() {
             Rhys Wood
           </h1>
         </div>
+      </div>
       </div>
     </div>
     </div>
