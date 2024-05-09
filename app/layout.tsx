@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import CustomCursor from '../components/CustomCursor/CustomCursor';
+import MobileNav from '../components/Navigation/MobileNav';
 import Nav from '../components/Navigation/Nav';
 import Footer from '../components/Navigation/Footer';
 import { Metadata } from 'next';  
@@ -20,9 +21,14 @@ export default function RootLayout({
           <body>
               <main className='app'>
                 <CustomCursor />
+                <div className="md:hidden">
+                  <MobileNav />
+                </div>
+                <div className="hidden md:block">
                   <Nav />
-                    {children}
-                  <Footer />
+                </div>
+                {children}
+                <Footer />
               </main>
           </body>
       </html>

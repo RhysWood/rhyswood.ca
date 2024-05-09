@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useRef } from "react";
 import { MenuItems } from "./menuItems.jsx";
 import "../Navigation/mobilenav.scss";
@@ -5,15 +6,8 @@ import "../Navigation/mobilenav.scss";
 const MobileNav = () => {
   const element = useRef(null);
 
-  useEffect(() => {
-    setTimeout(() => {
-      element.current.className = "fade-in";
-      console.log("fade in");
-    }, 0);
-  }, []);
-
   return (
-    <nav className="nav-wrapper">
+    <nav className="nav-wrapper" ref={element}>
       <div className="nav-child-mobile">
         <a href="/">RW</a>
       </div>

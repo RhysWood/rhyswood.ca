@@ -54,6 +54,8 @@
 }
 
 .intro-text {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
   font-weight: 800;
@@ -67,6 +69,7 @@
   margin-bottom: 50vh;
 }
 .intro-text p {
+  margin-top: 15px;
   justify-content: space-around;
   opacity: 0;
 }
