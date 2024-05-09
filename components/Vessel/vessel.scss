@@ -1,0 +1,27 @@
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    font-weight: 800;
+    background-color: black;
+    color: #fff;
+    border-radius: 25px;
+    padding: 25px;
+    font-size: 10px;
+    line-height: 4vw;
+    font-family: 'RadioGrotesk-Ultralight';
+    margin-bottom: 30vh;
+    p {
+      margin-top: 15px;
+      justify-content: space-around;
+      opacity: 0;
+      > div {
+        opacity: 0;
+        transform: translateY(0px);
+      }
+      &.is-reveal {
+        opacity: 1;
+      }
+    }
+  }

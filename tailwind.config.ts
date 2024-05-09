@@ -15,6 +15,8 @@ const config: Config = {
       },
       colors: {
         ricegreen: "#6dfeb0",
+        riceyellow: "#FFE74C",
+        ricepink: "#FF5964",
       },
       screens: {
         'sm': '640px',
