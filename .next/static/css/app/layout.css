@@ -571,8 +571,26 @@ video {
 .ml-\[40vh\] {
   margin-left: 40vh;
 }
-.mr-28 {
-  margin-right: 7rem;
+.mr-8 {
+  margin-right: 2rem;
+}
+.mr-\[10vh\] {
+  margin-right: 10vh;
+}
+.mr-\[20vh\] {
+  margin-right: 20vh;
+}
+.mr-\[15vh\] {
+  margin-right: 15vh;
+}
+.mr-\[12vh\] {
+  margin-right: 12vh;
+}
+.mr-\[11vh\] {
+  margin-right: 11vh;
+}
+.mr-\[5vh\] {
+  margin-right: 5vh;
 }
 .block {
   display: block;
@@ -591,9 +609,6 @@ video {
 }
 .h-screen {
   height: 100vh;
-}
-.w-1\/2 {
-  width: 50%;
 }
 .w-\[90\%\] {
   width: 90%;

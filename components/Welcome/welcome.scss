@@ -56,6 +56,7 @@
     // flex-direction: column;
     // justify-content: center;
     // align-items: flex-end; // Aligns items to the right
+    justify-content: center;
     width: 100%;
     font-weight: 800;
     background-color: black;
@@ -67,6 +68,7 @@
     font-family: 'RadioGrotesk-Ultralight';
     margin-bottom: 50vh;
     p {
+      justify-content: space-around;
       opacity: 0;
       > div {
         opacity: 0;

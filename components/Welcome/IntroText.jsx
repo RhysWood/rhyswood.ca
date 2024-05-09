@@ -34,10 +34,10 @@ function IntroText() {
   }, [reveal]);
 
     return(
-        <div className={cn("flex w-1/2 grow ml-[40vh] mr-28", {'is-reveal' : reveal})} data-scroll-section>
+        <div className={cn("flex ml-[40vh] mr-[5vh]", {'is-reveal' : reveal})} data-scroll-section>
         <div className="intro-text">
           <p ref={ref} id="para" className={cn({'is-reveal' : reveal})}>
-          <span className='text-ricegreen inline'>Experienced Full-Stack Developer</span> based in Vancouver, BC, specializing in creating dynamic and <span className='text-ricegreen inline'>user-friendly sites & web apps</span>. With a strong background in front-end & back-end technologies, including automation scripting and REST API integration, I bring ideas to life from inception to implementation.
+          Vancouver based <span className='text-ricegreen'>Full-Stack Developer</span> with an expertise in crafting dynamic and <span className='text-ricegreen'>intuitive web applications.</span> Proficiency in front-end and back-end technologies, with a focus on <span className='text-ricegreen'>seamless REST API integration.</span>
           </p>
         </div>
       </div>
