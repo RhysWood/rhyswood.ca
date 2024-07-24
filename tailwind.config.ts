@@ -14,8 +14,9 @@ const config: Config = {
         NeueMontrealBold: ["NeueMontreal-Bold", "sans-serif"],
       },
       colors: {
-        ricegreen: "#6dfeb0",
+        ricegreen: "#57fa8e",
         riceyellow: "#FFE74C",
+        riceblack: "#1e1e1e",
         ricepink: "#FF5964",
       },
       screens: {

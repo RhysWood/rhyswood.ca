@@ -5,7 +5,7 @@ import "../Navigation/nav.scss";
 const Nav = () => {
 
   return (
-    <nav className="desktop-nav">
+    <nav className="desktop-nav text-riceblack">
       <div className="nav-wrapper">
         <div className="nav-child">
           <a href="/">RW</a>
