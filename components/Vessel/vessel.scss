@@ -25,3 +25,11 @@
       }
     }
   }
+
+  .arrow {
+    position: absolute;
+    opacity: 0;  /* Initially hidden */
+    font-size: 2rem;
+    transform: rotate(45deg); /* Rotate to point towards the image */
+  }
+  

@@ -1,24 +1,25 @@
 import * as React from "react";
-import Image from 'next/image'
+import Image from "next/image";
 import Intro from "./vesselparts/Intro";
 import "./vessel.scss";
 
 function Vessel() {
   return (
-    <>
-      <div className="vessel bg-riceyellow">
+    <section id="vessel">
+      <div className="vessel min-h-screen">
         <div className="flex justify-center">
           <Image
             src="/assets/vessellogo.svg"
-            width={500}
-            height={500}
             alt="Vessel"
-            className="filter invert mt-6"
+            width={400}
+            height={400}
+            layout="responsive"
+            className="filter invert mt-16 max-w-xs md:max-w-sm lg:max-w-md"
           />
         </div>
         <Intro />
       </div>
-    </>
+    </section>
   );
 }
 
