@@ -10,7 +10,7 @@
     padding: 25px;
     font-size: 10px;
     line-height: 4vw;
-    font-family: 'RadioGrotesk-Ultralight';
+    font-family: 'NeueMontreal-Italic', serif;
     margin-bottom: 30vh;
     p {
       margin-top: 15px;
@@ -24,12 +24,5 @@
         opacity: 1;
       }
     }
-  }
-
-  .arrow {
-    position: absolute;
-    opacity: 0;  /* Initially hidden */
-    font-size: 2rem;
-    transform: rotate(45deg); /* Rotate to point towards the image */
   }
   

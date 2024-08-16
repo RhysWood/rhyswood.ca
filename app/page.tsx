@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Welcome />
-      <div className="flex justify-end">
+      <div className="flex justify-center items-center">
         <IntroText />
       </div>
       <Vessel />

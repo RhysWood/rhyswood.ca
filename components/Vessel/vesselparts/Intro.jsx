@@ -9,7 +9,6 @@ import "../vessel.scss";
 
 function Intro() {
   const ref = useRef(null);
-  const arrowRef = useRef(null);
   const imageRef = useRef(null);
   const [reveal, setReveal] = useState(false);
   const onScreen = useOnScreen(ref);
@@ -19,25 +18,6 @@ function Intro() {
       setReveal(onScreen);
     }
   }, [onScreen]);
-
-  const positionArrow = () => {
-    if (imageRef.current && arrowRef.current) {
-      const imageRect = imageRef.current.getBoundingClientRect();
-      const textRect = ref.current.getBoundingClientRect();
-
-      gsap.to(arrowRef.current, {
-        duration: 1,
-        opacity: 1,
-        x: imageRect.left - textRect.left - arrowRef.current.clientWidth, // Horizontal distance between text and image
-        y:
-          imageRect.top -
-          textRect.top +
-          imageRect.height / 2 -
-          arrowRef.current.clientHeight / 2, // Center the arrow vertically with the image
-        ease: "power2",
-      });
-    }
-  };
 
   useEffect(() => {
     if (reveal) {
@@ -52,33 +32,22 @@ function Intro() {
         stagger: 0.1,
         ease: "power2",
       });
-
-      gsap.set(arrowRef.current, {
-        opacity: 0,
-      });
-
-      positionArrow(); // Position arrow initially
-      window.addEventListener("resize", positionArrow); // Reposition arrow on window resize
     }
-
-    return () => {
-      window.removeEventListener("resize", positionArrow); // Cleanup event listener
-    };
   }, [reveal]);
 
   return (
     <div
-      className={cn("mt-8 ml-24 mr-6", { "is-reveal": reveal })}
+      className={cn("mt-24 ml-24 mr-6 border-red-400 border", { "is-reveal": reveal })}
       data-scroll-section
     >
-      <div className="">
-        <div>
-          <h1>Overview</h1>
+      <div className="flex flex-col lg:flex-row lg:space-x-6">
+        <div ref={imageRef} className="lg:w-1/2">
+          <h1 className="">Overview</h1>
           <ul
             ref={ref}
             id="para1"
             className={cn({
-              "is-reveal text-xl mt-6 font-NeueMontrealBook lg:w-1/4": reveal,
+              "is-reveal text-xl font-NeueMontrealBook mt-12": reveal,
             })}
           >
             <li>
@@ -88,25 +57,20 @@ function Intro() {
             </li>
           </ul>
         </div>
-
-        <div ref={arrowRef} className="arrow text-ricegreen">
-          ----➤
-        </div>
-        <div className="flex justify-end">
+  
+        <div className="lg:w-1/2 mt-8 lg:mt-0">
           <Image
             src="/assets/imgs/vessel.png"
             alt="Vessel"
-            width={400}
-            height={400}
-            layout="responsive"
-            ref={imageRef}
-            onLoad={positionArrow} // Call positionArrow after image has loaded
-            className="filter mt-16 max-w-xs md:max-w-md lg:max-w-lg"
+            width={500}
+            height={500}
+            className="filter max-w-full"
           />
         </div>
       </div>
     </div>
   );
+  
 }
 
 export default Intro;
