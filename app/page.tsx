@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Welcome from "../components/Welcome/Welcome";
 import IntroText from "../components/Welcome/IntroText";
 import Vessel from "../components/Vessel/Vessel"
