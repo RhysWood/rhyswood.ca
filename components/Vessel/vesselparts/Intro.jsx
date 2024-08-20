@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import SplitText from "../../utils/Split3.min.js";
 import gsap from "gsap";
 import cn from "classnames";
@@ -50,10 +51,24 @@ function Intro() {
           />
         </div>
 
-        <div ref={imageRef} className="lg:w-1/2 w-full text-center lg:text-left">
-          <h1 className="text-4xl font-bold font-NeueMontrealBold text-gray-800">
+        <div ref={imageRef} className="lg:w-1/2 w-full text-center lg:text-left relative">
+          <h1 className="text-4xl font-bold font-NeueMontrealBold text-gray-800 inline-block">
             Overview
           </h1>
+          <div className="relative">
+            <DotLottieReact 
+              src="/assets/lottie/underline.json" 
+              autoplay 
+              style={{
+                width: '220px', 
+                height: '50px',
+                position: 'absolute',
+                bottom: '-15px', // Moves underline closer to the text
+                left: '0', // Aligns it with the text start
+              }} 
+            />
+          </div>
+
           <ul
             ref={ref}
             id="para1"

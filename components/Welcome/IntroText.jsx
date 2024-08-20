@@ -34,7 +34,7 @@ function IntroText() {
   }, [reveal]);
 
     return(
-        <div className={cn("flex lg:mx-44 mx-12", {'is-reveal' : reveal})} data-scroll-section>
+        <div className={cn("flex lg:mx-44 mx-12 mt-64", {'is-reveal' : reveal})} data-scroll-section>
         <div className="intro-text font-thin">
           <p ref={ref} id="para" className={cn({'is-reveal font-thin' : reveal})}>
           <span className='text-ricegreen'>Full-Stack Developer</span> with an expertise in crafting dynamic and <span className='text-ricegreen'>intuitive web applications.</span> Proficient in front-end and back-end technologies, with a focus on <span className='text-ricegreen'>seamless REST API integration.</span>
