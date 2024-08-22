@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import "../vessel.scss";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import SplitText from "../../utils/Split3.min.js";
 import gsap from "gsap";
@@ -32,6 +33,9 @@ function Intro() {
           opacity: 1,
           stagger: 0.08,
           ease: "power2.out",
+          onComplete: () => {
+            document.querySelector("#para1").classList.add("is-reveal");
+          },
         }
       );
     }
@@ -75,40 +79,18 @@ function Intro() {
             </div>
           )}
 
-          <ul
+<ul
             ref={ref}
             id="para1"
-            className={cn(
-              "mt-6 space-y-4 text-xl font-NeueMontrealBook text-gray-600",
-              { "opacity-100": reveal }
-            )}
+            className={cn("mt-6 space-y-4 text-xl font-NeueMontrealBook text-gray-600", {
+              "opacity-100": reveal,
+            })}
             style={{ opacity: reveal ? 1 : 0 }}
           >
             <li>
-              As the{" "}
-              <span
-                className="relative inline-block"
-                style={{ marginRight: "0.25rem", marginLeft: "0.25rem" }}
-              >
-                lead
-                {reveal && (
-                  <DotLottieReact
-                    src="/assets/lottie/highlight.json"
-                    autoplay={reveal}
-                    style={{
-                      width: "70px",
-                      height: "50px",
-                      position: "absolute",
-                      bottom: "-10px",
-                      left: "-15px",
-                      zIndex: "-1",
-                    }}
-                  />
-                )}
-              </span>{" "}
-              developer, I designed and implemented a comprehensive order portal
-              from scratch, significantly enhancing the customer experience and
-              streamlining internal processes.
+              As the <span className="highlight">lead developer</span>, I designed and implemented a
+              comprehensive order portal from scratch, significantly enhancing the customer
+              experience and streamlining internal processes.
             </li>
           </ul>
         </div>

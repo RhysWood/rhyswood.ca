@@ -25,4 +25,29 @@
       }
     }
   }
+
+  .highlight {
+    position: relative;
+    display: inline-block; /* Ensures the highlight wraps around the text */
+  }
+  
+  .highlight::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 20px; /* Adjust this to control the thickness */
+    width: 100%;
+    background-color: yellow; /* Highlight color */
+    z-index: -1; /* Pushes the highlight behind the text */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease; /* Smooth animation */
+  }
+  
+  /* Trigger the animation when the element is revealed */
+  .is-reveal .highlight::before {
+    transform: scaleX(1); /* Expands the highlight */
+  }
+  
   
