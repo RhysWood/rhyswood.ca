@@ -17,7 +17,7 @@ function Vessel() {
             className="filter invert mt-16 max-w-xs md:max-w-sm lg:max-w-md"
           />
         </div>
-        <div className="mx-24 my-12">
+        <div className="mx-24 my-12 max-w-screen-2xl">
         <Intro />
         </div>
       </div>

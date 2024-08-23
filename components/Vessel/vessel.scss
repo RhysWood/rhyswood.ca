@@ -1,3 +1,23 @@
+#vessel {
+  background-color: white; /* Set default background for this section */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem; /* Add some padding for spacing */
+}
+
+.vessel {
+  min-height: 100vh; /* Ensure the section takes up the full viewport height */
+  padding: 2rem; /* Space out the content */
+}
+
+@media (min-width: 768px) {
+  .vessel {
+    padding: 4rem; /* Increase padding for larger screens */
+  }
+}
+
 .intro-text {
     display: flex;
     flex-direction: column;
