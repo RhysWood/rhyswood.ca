@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import "../styles/index.scss";
 import Lighthouse from "./Lighthouse/Lighthouse";
 import IntroText from "./Welcome/IntroText";
-// import Goat from "./Goat/Goat";
 import Gallery from "./Gallery/Gallery";
 import Vessel from "./Vessel/Vessel";
 import Contact from "./Contact/Contact";
@@ -10,14 +9,34 @@ import Welcome from "./Welcome/Welcome";
 import CustomCursor from "./CustomCursor/CustomCursor";
 import NavBar from "./Navigation/navbar";
 import Footer from "./Navigation/Footer";
-import useLocoScroll from "./hooks/useLocoScroll";
+import { ReactLenis } from 'lenis/react';
+import { gsap } from 'gsap';
+
+// Register GSAP plugin
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [preloader, setPreloader] = useState(true);
-  useLocoScroll(!preloader);
-  const [timer, setTimer] = useState(2);
 
+  const lenisRef = useRef(null);
+
+  useEffect(() => {
+    const lenis = lenisRef.current?.lenis;
+
+    function update(time) {
+      lenis?.lenis?.raf(time * 1000);
+    }
+
+    gsap.ticker.add(update);
+
+    return () => {
+      gsap.ticker.remove(update);
+    };
+  }, []);
+
+  const [timer, setTimer] = useState(2);
   const timeoutId = useRef(null);
 
   const clear = () => {
@@ -44,7 +63,7 @@ const Home = () => {
   }, [preloader]);
 
   return (
-    <>
+    <ReactLenis ref={lenisRef} autoRaf={false}>
       <CustomCursor />
       {preloader ? (
         <div className="loader-wrapper absolute" ref={timeoutId}>
@@ -75,10 +94,6 @@ const Home = () => {
                 <Gallery />
               </div>
 
-              {/* <div id="vessel" className="section">
-            <Goat />
-          </div> */}
-
               <div id="vessel" className="section">
                 <Vessel />
               </div>
@@ -91,7 +106,7 @@ const Home = () => {
           </div>
         </>
       )}
-    </>
+    </ReactLenis>
   );
 };
 
