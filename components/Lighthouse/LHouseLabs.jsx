@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import { ReactLenis } from 'lenis/react';
+import { ReactLenis, useLenis } from 'lenis/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const FloatingLetters = () => {
   const lettersRef = useRef([]);
+  const lenis = useLenis(); // Hook called directly in the component body
 
   useEffect(() => {
     const elements = lettersRef.current;
@@ -24,22 +25,31 @@ const FloatingLetters = () => {
         ease: "power1.inOut",
         scrollTrigger: {
           trigger: ".text-container",
-          start: "top center-=100", // Start animation 100px before the trigger reaches the center of the viewport
-          end: "bottom top+=100", // End animation 100px after the trigger reaches the top of the viewport
-          scrub: true, // Smooth animation based on scroll
+          start: "top center-=250",
+          end: "bottom top+=250", 
+          scrub: true,
+          invalidateOnRefresh: true, // Make sure ScrollTrigger updates on refresh
         },
       }
     );
 
+    // Sync ScrollTrigger with Lenis on scroll
+    if (lenis) {
+      lenis.on('scroll', ScrollTrigger.update);
+    }
+
     return () => {
+      if (lenis) {
+        lenis.off('scroll', ScrollTrigger.update);
+      }
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, []);
+  }, [lenis]); // Dependency array includes lenis
 
   return (
-    <ReactLenis autoRaf={false}>
+    <ReactLenis autoRaf={true}>
       <div className="text-container h-auto flex justify-center items-center overflow-hidden">
-        <div className="text-center text-4xl sm:text-6xl font-bold flex flex-wrap justify-center space-x-1 sm:space-x-2 my-12">
+        <div className="text-center text-4xl sm:text-6xl font-bold flex flex-wrap justify-center space-x-1 sm:space-x-2 my-8">
           {['L', 'I', 'G', 'H', 'T', 'H', 'O', 'U', 'S', 'E', ' ', 'L', 'A', 'B', 'S'].map((letter, index) => (
             <span
               key={index}

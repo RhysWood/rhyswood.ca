@@ -17,22 +17,25 @@ const CustomCursor = () => {
   });
 
   useEffect(() => {
-    document.addEventListener("mousemove", (e) => {
-      const { clientX, clientY } = e;
+    const handleMouseMove = (e) => {
+      if (mainCursor.current && secondaryCursor.current) {
+        const { clientX, clientY } = e;
 
-      const mouseX = clientX;
-      const mouseY = clientY;
+        const mouseX = clientX;
+        const mouseY = clientY;
 
-      positionRef.current.mouseX =
-        mouseX - secondaryCursor.current.clientWidth / 2;
-      positionRef.current.mouseY =
-        mouseY - secondaryCursor.current.clientHeight / 2;
+        positionRef.current.mouseX = mouseX - secondaryCursor.current.clientWidth / 2;
+        positionRef.current.mouseY = mouseY - secondaryCursor.current.clientHeight / 2;
 
-      mainCursor.current.style.transform = `translate3d(${
-        mouseX - mainCursor.current.clientWidth / 2
-      }px, ${mouseY - mainCursor.current.clientHeight / 2}px, 0)`;
-    });
-    return () => {};
+        mainCursor.current.style.transform = `translate3d(${mouseX - mainCursor.current.clientWidth / 2}px, ${mouseY - mainCursor.current.clientHeight / 2}px, 0)`;
+      }
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   useEffect(() => {
@@ -48,7 +51,7 @@ const CustomCursor = () => {
         distanceY,
       } = positionRef.current;
 
-      if (!destinationX | !destinationY) {
+      if (destinationX === 0 && destinationY === 0) {
         positionRef.current.destinationX = mouseX;
         positionRef.current.destinationY = mouseY;
       } else {
@@ -67,11 +70,19 @@ const CustomCursor = () => {
           positionRef.current.destinationY += distanceY;
         }
       }
-      secondaryCursor.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
-      
+
+      if (secondaryCursor.current) {
+        secondaryCursor.current.style.transform = `translate3d(${positionRef.current.destinationX}px, ${positionRef.current.destinationY}px, 0)`;
+      }
     };
+
     followMouse();
+
+    return () => {
+      cancelAnimationFrame(positionRef.current.key);
+    };
   }, []);
+
   return (
     <>
       <div className="main-cursor" ref={mainCursor}>

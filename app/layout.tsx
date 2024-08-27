@@ -1,14 +1,18 @@
+'use client';
 import '../styles/globals.css';
 import CustomCursor from '../components/CustomCursor/CustomCursor';
 import MobileNav from '../components/Navigation/MobileNav';
 import Nav from '../components/Navigation/Nav';
 import Footer from '../components/Navigation/Footer';
-import { Metadata } from 'next';  
+import { ReactLenis } from 'lenis/react';
+import Lenis from 'lenis';
+import 'lenis/dist/lenis.css';
+import { useEffect } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from 'gsap';
 
-export const metadata: Metadata = {
-  title: 'Rhys Wood | Web Developer',
-  description: "Rhys Wood is a web developer based in the Vancouver, Canada. He specialises in building websites and web applications using modern technologies such as React, Next.js, and TypeScript."
-};
+// Register GSAP plugin
+gsap.registerPlugin(ScrollTrigger);
 
 export default function RootLayout({
   children,
@@ -16,21 +20,43 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
 
-    return (
-      <html lang='en'>
-          <body>
-              <main className='app'>
-                <CustomCursor />
-                <div className="md:hidden">
-                  <MobileNav />
-                </div>
-                <div className="hidden md:block">
-                  <Nav />
-                </div>
-                {children}
-                <Footer />
-              </main>
-          </body>
-      </html>
-    )
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 0.8, // Duration for smooth scrolling
+      easing: (t) => (--t * t * t + 1), // Easing function (easeOutCubic)
+    });
+
+    lenis.on('scroll', ScrollTrigger.update);
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.off('scroll', ScrollTrigger.update);
+    };
+  }, []);
+
+  return (
+    <html lang='en'>
+      <body suppressHydrationWarning={true}>
+        <ReactLenis root autoRaf={true}>
+          <main className='app'>
+            <CustomCursor />
+            <div className="md:hidden">
+              <MobileNav />
+            </div>
+            <div className="hidden md:block">
+              <Nav />
+            </div>
+            {children}
+            <Footer />
+          </main>
+        </ReactLenis>
+      </body>
+    </html>
+  );
 }
