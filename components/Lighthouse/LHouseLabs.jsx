@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { ReactLenis, useLenis } from 'lenis/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import './Lhouse.scss';
 
 // Register GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -47,21 +48,19 @@ const FloatingLetters = () => {
   }, [lenis]); // Dependency array includes lenis
 
   return (
-    <ReactLenis autoRaf={true}>
-      <div className="text-container h-auto flex justify-center items-center overflow-hidden">
-        <div className="text-center text-4xl sm:text-6xl font-bold flex flex-wrap justify-center space-x-1 sm:space-x-2 my-8">
-          {['L', 'I', 'G', 'H', 'T', 'H', 'O', 'U', 'S', 'E', ' ', 'L', 'A', 'B', 'S'].map((letter, index) => (
-            <span
-              key={index}
-              ref={(el) => (lettersRef.current[index] = el)}
-              className={getColor(index)}
-            >
-              {letter}
-            </span>
-          ))}
-        </div>
+    <div className="text-container h-auto flex justify-center items-center overflow-hidden">
+      <div className="text-center text-4xl sm:text-6xl font-bold flex flex-wrap justify-center space-x-1 sm:space-x-2 my-8">
+        {['L', 'I', 'G', 'H', 'T', 'H', 'O', 'U', 'S', 'E', ' ', 'L', 'A', 'B', 'S'].map((letter, index) => (
+          <span
+            key={index}
+            ref={(el) => (lettersRef.current[index] = el)}
+            className={getColor(index)}
+          >
+            {letter}
+          </span>
+        ))}
       </div>
-    </ReactLenis>
+    </div>
   );
 };
 

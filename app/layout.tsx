@@ -22,9 +22,10 @@ export default function RootLayout({
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.8, // Duration for smooth scrolling
-      easing: (t) => (--t * t * t + 1), // Easing function (easeOutCubic)
+      duration: 0.5, // Slightly longer duration for smoother scrolling
+      easing: (t) => t * (2 - t), // Easing function (easeOutQuad)
     });
+  
 
     lenis.on('scroll', ScrollTrigger.update);
 
