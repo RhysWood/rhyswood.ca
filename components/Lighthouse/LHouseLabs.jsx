@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const FloatingLetters = () => {
   const lettersRef = useRef([]);
-  const lenis = useLenis(); // Hook called directly in the component body
+  const lenis = useLenis();
 
   useEffect(() => {
     const elements = lettersRef.current;
@@ -45,18 +45,20 @@ const FloatingLetters = () => {
       }
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [lenis]); // Dependency array includes lenis
+  }, [lenis]);
 
   return (
-    <div className="text-container h-auto flex justify-center items-center overflow-hidden">
+    <div className="text-container h-auto flex justify-center items-center overflow-visible py-12"> {/* Added py-12 and overflow-visible */}
       <div className="text-center text-4xl sm:text-6xl font-bold flex flex-wrap justify-center space-x-1 sm:space-x-2 my-8">
         {['L', 'I', 'G', 'H', 'T', 'H', 'O', 'U', 'S', 'E', ' ', 'L', 'A', 'B', 'S'].map((letter, index) => (
           <span
             key={index}
             ref={(el) => (lettersRef.current[index] = el)}
-            className={getColor(index)}
+            className="inline-block w-12 h-12 sm:w-16 sm:h-16 bg-lime-400 rounded-lg flex justify-center items-center"
           >
-            {letter}
+            <span className={`${getColor(index)} text-3xl sm:text-5xl font-bold`}>
+              {letter}
+            </span>
           </span>
         ))}
       </div>

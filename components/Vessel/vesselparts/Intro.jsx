@@ -23,10 +23,9 @@ function Intro() {
 
   useEffect(() => {
     if (reveal) {
-      const split = new SplitText("#para1", { type: "lines" });
-
+      const splitPara1 = new SplitText("#para1", { type: "lines" });
       gsap.fromTo(
-        split.lines,
+        splitPara1.lines,
         { opacity: 0, y: 20 },
         {
           duration: 1,
@@ -39,13 +38,29 @@ function Intro() {
           },
         }
       );
+  
+
+      const splitPara2 = new SplitText("#para2", { type: "lines" });
+      gsap.fromTo(
+        splitPara2.lines,
+        { opacity: 0, y: 20 },
+        {
+          duration: 1,
+          y: 0,
+          opacity: 1,
+          stagger: 0.08,
+          ease: "power2.out",
+          onComplete: () => {
+            document.querySelector("#para2").classList.add("is-reveal");
+          },
+        }
+      );
     }
   }, [reveal]);
 
   return (
     <section className="py-16 px-6 lg:px-24">
       <div className="flex flex-col-reverse lg:flex-row lg:space-x-10 items-center">
-        {/* Image Container */}
         <div className="lg:w-1/2 w-full mt-8 lg:mt-0 flex justify-center lg:justify-start">
           <a
             href="https://github.com/VesselPackaging/vesselsite_nextjs"
@@ -63,7 +78,6 @@ function Intro() {
           </a>
         </div>
 
-        {/* Text Container */}
         <div
           ref={imageRef}
           className="lg:w-1/2 w-full text-center lg:text-left relative"
@@ -140,7 +154,7 @@ function Intro() {
 
           <ul
             ref={ref}
-            id="para1"
+            id="para2"
             className={cn(
               "mt-6 space-y-4 text-base sm:text-lg lg:text-xl font-NeueMontrealBook text-gray-600",
               {
@@ -150,8 +164,15 @@ function Intro() {
             style={{ opacity: reveal ? 1 : 0 }}
           >
             <li>
-              The web app was built with NextJs 14.0 using the latest app router rather than page router. 
+              The web app was built with <span className="highlight">NextJs 14.0</span> using the latest app router rather than page router. 
             </li>
+            <li>
+              I used <span className="highlight">Sanity.io</span> as a headless CMS, allowing my colleuges to update order leadtimes and the News & Updates section easily.
+            </li>
+            <li>
+              The app is deployed using <span className="highlight">Vercel.</span>
+            </li>
+            <li>A login version of the site was launched and connected to a <span className="highlight">MongoDB database</span> - however this is not used in the final production.</li>
           </ul>
         </div>
             
