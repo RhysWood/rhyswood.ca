@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
       <div className="footer">
-      <a href="/">©2024</a>
+      <a href="/">©2025</a>
       </div>
     </>
   );

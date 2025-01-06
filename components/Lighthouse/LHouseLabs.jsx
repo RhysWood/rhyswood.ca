@@ -54,7 +54,7 @@ const FloatingLetters = () => {
           <span
             key={index}
             ref={(el) => (lettersRef.current[index] = el)}
-            className="w-12 h-12 sm:w-16 sm:h-16 bg-lime-400 rounded-lg flex justify-center items-center"
+            className="w-12 h-12 sm:w-16 sm:h-16 bg-green-200 rounded-lg flex justify-center items-center"
           >
             <span className={`${getColor(index)} text-3xl sm:text-5xl font-bold`}>
               {letter}
