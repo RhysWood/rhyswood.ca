@@ -1,28 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import MobileNav from "./MobileNav";
 import DesktopNav from "./DesktopNav";
 
 function NavBar() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
 
-  const handleResize = () => {
-    if (window.innerWidth < 900) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  };
-
-  useEffect(() => {
-    if (window.innerWidth < 900) {
-      setIsMobile(true);
-    }
-    window.addEventListener("resize", handleResize);
+  const handleResize = useCallback(() => {
+    setIsMobile(window.innerWidth < 900);
   }, []);
 
-  return (
-    isMobile ? <MobileNav /> : <DesktopNav />
-  );
+  useEffect(() => {
+    // Add event listener for resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
+
+  return isMobile ? <MobileNav /> : <DesktopNav />;
 }
 
 export default NavBar;
