@@ -1,10 +1,11 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import SplitText from '../utils/Split3.min.js';
 import gsap from 'gsap';
 import cn from 'classnames';
 import useOnScreen from '../hooks/useOnScreen';
 import './welcome.scss';
+import Image from "next/image";
 
 function IntroText() {
     const ref = useRef(null);
@@ -12,13 +13,13 @@ function IntroText() {
     const onScreen = useOnScreen(ref);
 
     useEffect(() => {
-        if(onScreen) {
+        if (onScreen) {
             setReveal(onScreen);
         }
     }, [onScreen]);
 
     useEffect(() => {
-        if(reveal) {
+        if (reveal) {
             const split = new SplitText("#para", {
                 type: "lines"
             });
@@ -33,12 +34,31 @@ function IntroText() {
         }
     }, [reveal]);
 
-    return(
-        <div className={cn("flex lg:mx-44 mx-12 mt-64", {'is-reveal' : reveal})} data-scroll-section>
-            <div className="intro-text font-thin">
-                <p ref={ref} id="para" className={cn({'is-reveal font-thin' : reveal})}>
-                    <span className='text-ricegreen'>Full-Stack Developer</span> with an expertise in crafting dynamic and <span className='text-ricegreen'>intuitive web applications.</span> Proficient in front-end and back-end technologies, with a focus on <span className='text-ricegreen'>seamless REST API integration.</span>
-                </p>
+    return (
+        <div className="flex lg:flex-row flex-col mx-10">
+
+            <div className={cn("flex lg:mx-44 mx-12 lg:mt-64 mt-32 lg:w-2/3", { 'is-reveal': reveal })}
+                 data-scroll-section>
+                <div className="intro-text font-thin">
+                    <p ref={ref} id="para" className={cn("", {'is-reveal font-thin': reveal})}>
+                        Hi, I'm Rhys - a <span className='text-ricegreen'>Full-Stack Developer. </span> I create seamless
+                        web apps, from intuitive front-end designs to <span className='text-ricegreen'>scalable back-end solutions.</span>
+                        I'm passionate about turning ideas into efficient, <span className='text-ricegreen'>user-friendly experiences.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div className="flex justify-center flex-col-reverse lg:flex-row lg:space-x-10 items-center">
+                <div className="flex justify-center lg:justify-start">
+                    <Image
+                        src="/assets/imgs/Rhys_Wood.jpg"
+                        alt="Rhys"
+                        width={300}
+                        height={300}
+                        className="max-w-full lg:max-w-[500px] h-auto rounded-lg shadow-lg"
+                        priority
+                    />
+                </div>
             </div>
         </div>
     )

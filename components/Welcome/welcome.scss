@@ -54,16 +54,16 @@
 .intro-text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
+  line-height: 4vw;
   width: 100%;
   background-color: black;
   color: #fff;
   border-radius: 25px;
   padding: 25px;
   font-size: 3vw;
-  line-height: 4vw;
-  font-family: 'RadioGrotesk-Ultralight', sans-serif;
-  margin-bottom: 30vh;
+  font-family: 'NeueMontreal-Book', sans-serif;
+  //margin-bottom: 30vh;
   p {
     margin-top: 15px;
     justify-content: space-around;
@@ -111,11 +111,11 @@
 
   .intro-text {
     width: 100%;
-    font-size: 7vw;
-    line-height: 8vw;;
+    font-size: 5vw;
+    line-height: 6vw;
     font-family: 'NeueMontreal-Book', sans-serif;
-    text-align:justify;
-    text-align-last:justify;
+    text-align: start;
+    text-align-last:start;
     p {
       opacity: 0;
       > div {
@@ -137,3 +137,4 @@
 .lineParent {
   overflow: hidden;
 }
+

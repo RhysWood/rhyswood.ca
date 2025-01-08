@@ -8,9 +8,8 @@ export default function Home() {
   return (
     <>
       <Welcome />
-      <div className="flex justify-center items-center">
         <IntroText />
-      </div>
+
       <div>
         <LHouseLabs />
       </div>
