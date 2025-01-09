@@ -28,7 +28,6 @@ function Welcome() {
     return (
         <div
             className="relative min-h-screen flex flex-col justify-between items-center lg:items-stretch bg-black"
-            data-scroll-section
             style={{ paddingTop: "clamp(4rem, 10vh, 8rem)" }} // Dynamic spacing for the nav
         >
             {/* Top section */}

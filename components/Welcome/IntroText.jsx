@@ -35,14 +35,12 @@ function IntroText() {
     }, [reveal]);
 
     return (
-        <div className="flex lg:flex-row flex-col mx-10">
-
-            <div className={cn("flex lg:mx-44 mx-12 lg:mt-64 mt-32 lg:w-2/3", { 'is-reveal': reveal })}
-                 data-scroll-section>
+        <div className="intro-wrapper">
+            <div className={cn("flex lg:mx-44 lg:mt-64 mt-32 lg:w-7/12", { 'is-reveal': reveal })}>
                 <div className="intro-text font-thin">
                     <p ref={ref} id="para" className={cn("", {'is-reveal font-thin': reveal})}>
-                        Hi, I'm Rhys - a <span className='text-ricegreen'>Full-Stack Developer. </span> I create seamless
-                        web apps, from intuitive front-end designs to <span className='text-ricegreen'>scalable back-end solutions.</span>
+                        Hi, I'm Rhys - a <span className='text-ricegreen'>Full-Stack Developer. </span>I create seamless
+                        web apps, from intuitive front-end designs to <span className='text-ricegreen'>scalable back-end solutions. </span>
                         I'm passionate about turning ideas into efficient, <span className='text-ricegreen'>user-friendly experiences.</span>
                     </p>
                 </div>

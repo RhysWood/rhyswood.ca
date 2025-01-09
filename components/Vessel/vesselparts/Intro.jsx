@@ -82,26 +82,19 @@ function Intro() {
           ref={imageRef}
           className="lg:w-1/2 w-full text-center lg:text-left relative"
         >
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-NeueMontrealBold text-gray-800">
+          <h1 className="text-3xl lg:text-5xl font-bold font-NeueMontrealBold text-gray-800">
             Overview
           </h1>
 
-          {reveal && (
-            <div className="relative">
-              <DotLottieReact
-                src="/assets/lottie/underline.json"
-                autoplay={reveal}
-                style={{
-                  width: "220px",
-                  height: "50px",
-                  position: "absolute",
-                  bottom: "-15px",
-                  left: "5%",
-                  transform: "translateX(-15%)", // Centers underline on mobile
-                }}
-              />
-            </div>
-          )}
+            {reveal && (
+                <div className="relative">
+                    <DotLottieReact
+                        src="/assets/lottie/underline.json"
+                        autoplay={reveal}
+                        className="underline-animation" // Apply SCSS styles
+                    />
+                </div>
+            )}
 
           <ul
             ref={ref}
@@ -135,20 +128,13 @@ function Intro() {
           </h1>
 
           {reveal && (
-            <div className="relative">
-              <DotLottieReact
-                src="/assets/lottie/underline.json"
-                autoplay={reveal}
-                style={{
-                  width: "270px",
-                  height: "50px",
-                  position: "absolute",
-                  bottom: "-15px",
-                  left: "5%",
-                  transform: "translateX(-15%)", // Centers underline on mobile
-                }}
-              />
-            </div>
+              <div className="relative">
+                  <DotLottieReact
+                      src="/assets/lottie/underline.json"
+                      autoplay={reveal}
+                      className="underline-animation" // Apply SCSS styles
+                  />
+              </div>
           )}
           <Icons />
 

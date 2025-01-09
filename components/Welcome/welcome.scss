@@ -40,21 +40,23 @@
 }
 
 .intro-wrapper {
-  height: 50vh;
-  width: 90%;
-  padding-top: 10rem;
-  margin: 0 auto;
-  display: grid;
-  position: relative;
-  place-items: start end;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
+  display: flex;
+  flex-direction: column; /* Default: column */
+  height: 100vh;
+  margin-bottom: 10vh;
+  margin-left: 2.5rem; /* mx-10 */
+  margin-right: 2.5rem;
+  @media (min-width: 1024px) { /* Matches Tailwind's lg: breakpoint */
+    flex-direction: row; /* Switch to row for larger screens */
+    height: auto; /* Adjust height if necessary */
+  }
 }
 
 .intro-text {
   display: flex;
   flex-direction: column;
   justify-content: start;
+  align-self: flex-start;
   line-height: 4vw;
   width: 100%;
   background-color: black;
@@ -79,7 +81,7 @@
 }
 
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1024px) {
   .wrapper {
     display: flex;
     height: 80vh;
@@ -105,17 +107,19 @@
     width: 90%;
     padding-top: 6rem;
     margin: 0 auto;
-    display: block;
+    display: flex; /* Ensure it's still a flexbox container */
+    flex-direction: column-reverse; /* Stack the image on top of the text */
     position: relative;
   }
 
   .intro-text {
     width: 100%;
     font-size: 5vw;
+    align-self: flex-start;
     line-height: 6vw;
     font-family: 'NeueMontreal-Book', sans-serif;
     text-align: start;
-    text-align-last:start;
+    text-align-last: start;
     p {
       opacity: 0;
       > div {
@@ -127,7 +131,6 @@
       }
     }
   }
-
 }
 
 .lineChildren {

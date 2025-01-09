@@ -1,10 +1,5 @@
 export const MenuItems = [
     {
-        title: 'GOAT CREATIVE',
-        url: '#goat',
-        cName: 'nav-links'
-    },
-    {
         title: 'L-HOUSE LABS',
         url: '#lighthouse',
         cName: 'nav-links'
@@ -12,6 +7,16 @@ export const MenuItems = [
     {
         title: 'VESSEL PKGING',
         url: '#vessel',
+        cName: 'nav-links'
+    },
+    {
+        title: 'TRICOR',
+        url: '#tricor',
+        cName: 'nav-links'
+    },
+    {
+        title: 'PROJECTS',
+        url: '#projects',
         cName: 'nav-links'
     },
 

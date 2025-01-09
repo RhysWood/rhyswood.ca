@@ -46,6 +46,20 @@
     }
   }
 
+.underline-animation {
+  width: 220px;
+  height: 50px;
+  position: absolute;
+  bottom: -15px;
+  left: 50%; // Default center alignment
+  transform: translateX(-50%); // Center underline on smaller screens
+
+  @media (min-width: 1024px) { // For large screens
+    transform: translateX(-15%);
+    left: 5%; // Adjust position specifically for large screens
+  }
+}
+
   .highlight {
     position: relative;
     display: inline-block; /* Ensures the highlight wraps around the text */
