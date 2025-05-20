@@ -2,6 +2,9 @@
 import React, {useEffect, useRef, useState} from "react";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import TinyApp from "./lhouseproj/TinyApp";
+import Tweeter from "./lhouseproj/Tweeter";
+import LightBnb from "./lhouseproj/LightBnb";
 import {DotLottieReact} from "@lottiefiles/dotlottie-react";
 import cn from "classnames";
 import "./Lhouse.scss";
@@ -122,6 +125,23 @@ const FloatingLetters = () => {
                     </p>
                 </div>
             </section>
+
+            <div>
+                <div className="mb-20 text-center">
+                <h1 className="text-3xl mb-5 sm:text-4xl lg:text-3xl font-NeueMontrealBold text-gray-800">
+                    <a href="https://gitfront.io/r/user-1032879/3e7d07fa38a345b6e1b6c84d5b053004e14d88d1/RW-Site/">
+                    Learning Experiences
+                    </a>
+                </h1>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 px-4 max-w-7xl mx-auto">
+              <TinyApp />
+              <Tweeter />
+              <LightBnb />
+            </div>
+            </div>
+
         </section>
     )
         ;
