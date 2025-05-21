@@ -75,7 +75,7 @@ const FloatingLetters = () => {
   }, [reveal]);
 
   return (
-    <section id="lighthouse" className="bg-yellow-100">
+    <section id="lighthouse" className="bg-ricegum">
       <div className="text-container h-auto flex justify-center items-center overflow-visible mx-12 py-8 sm:pb-12">
         <div className="text-center text-3xl sm:text-4xl md:text-6xl font-bold flex flex-wrap justify-center space-x-1 sm:space-x-2 md:space-x-3 my-8">
           {[
