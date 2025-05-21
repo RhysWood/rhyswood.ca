@@ -39,6 +39,12 @@
   }
 }
 
+.line {
+  display: block;
+  overflow: hidden;
+  word-break: normal;
+}
+
 .intro-wrapper {
   display: flex;
   flex-direction: column; /* Default: column */
@@ -57,7 +63,8 @@
   flex-direction: column;
   justify-content: start;
   align-self: flex-start;
-  line-height: 4vw;
+  line-height: 1.4;
+  max-width: 50ch;
   width: 100%;
   background-color: black;
   color: #fff;

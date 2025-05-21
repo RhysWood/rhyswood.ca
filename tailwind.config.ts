@@ -18,6 +18,7 @@ const config: Config = {
         riceyellow: "#FFE74C",
         riceblack: "#1e1e1e",
         ricepink: "#FF5964",
+        riceorange: "#ffbf41",
       },
       screens: {
         'sm': '640px',
