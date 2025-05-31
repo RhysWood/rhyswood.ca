@@ -1,6 +1,6 @@
-import * as React from "react";
 import Image from "next/image";
 import Intro from "./vesselparts/Intro";
+import Impact from "./vesselparts/Impact";
 import "./vessel.scss";
 
 function Vessel() {
@@ -18,6 +18,7 @@ function Vessel() {
           />
         </div>
         <Intro />
+        <Impact />
       </div>
     </section>
   );

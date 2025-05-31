@@ -20,6 +20,9 @@ const config: Config = {
         ricepink: "#FF5964",
         riceorange: "#ffbf41",
         ricegum: "#ffc1cf",
+        tblightblue: '#3BC0C1',
+        tbturq: '#33b69f',
+        tbpeach: '#89B0AE',
       },
       screens: {
         'sm': '640px',
