@@ -1,87 +1,88 @@
 #vessel {
-  background-color: white; /* Set default background for this section */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem 1rem; /* Add some padding for spacing */
 }
 
 .vessel {
-  min-height: 100vh; /* Ensure the section takes up the full viewport height */
-  padding: 2rem; /* Space out the content */
-}
-
-@media (min-width: 768px) {
-  .vessel {
-    padding: 4rem; /* Increase padding for larger screens */
-  }
+  min-height: 100vh;
+  width: 100%;
 }
 
 .intro-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    font-weight: 800;
-    background-color: black;
-    color: #fff;
-    border-radius: 25px;
-    padding: 25px;
-    font-size: 10px;
-    line-height: 4vw;
-    font-family: 'NeueMontreal-Italic', serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  font-weight: 800;
+  background-color: black;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 1.6;
+  font-family: 'NeueMontreal-Italic', serif;
+  margin-bottom: 4rem;
+
+  @media (min-width: 768px) {
     margin-bottom: 30vh;
-    p {
-      margin-top: 15px;
-      justify-content: space-around;
-      opacity: 0;
-      > div {
-        opacity: 0;
-        transform: translateY(0px);
-      }
-      &.is-reveal {
-        opacity: 1;
-      }
-    }
+    padding: 2rem;
   }
 
-.underline-animation {
-  width: 220px;
-  height: 50px;
-  position: absolute;
-  bottom: -15px;
-  left: 50%; // Default center alignment
-  transform: translateX(-50%); // Center underline on smaller screens
-
-  @media (min-width: 1024px) { // For large screens
-    transform: translateX(-15%);
-    left: 5%; // Adjust position specifically for large screens
+  p {
+    margin-top: 1rem;
+    opacity: 0;
+    
+    &.is-reveal {
+      opacity: 1;
+    }
   }
 }
 
-  .highlight {
-    position: relative;
-    display: inline-block; /* Ensures the highlight wraps around the text */
+.underline-animation {
+  width: 180px;
+  height: 40px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (min-width: 768px) {
+    width: 220px;
+    height: 50px;
+    bottom: -15px;
   }
+
+  @media (min-width: 1024px) {
+    transform: translateX(-15%);
+    left: 5%;
+  }
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
   
-  .highlight::before {
+  &::before {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 20px; /* Adjust this to control the thickness */
+    height: 15px;
     width: 100%;
-    background-color: yellow; /* Highlight color */
-    z-index: -1; /* Pushes the highlight behind the text */
+    background-color: yellow;
+    z-index: -1;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.5s ease; /* Smooth animation */
+    transition: transform 0.5s ease;
+
+    @media (min-width: 768px) {
+      height: 20px;
+    }
   }
-  
-  /* Trigger the animation when the element is revealed */
-  .is-reveal .highlight::before {
-    transform: scaleX(1); /* Expands the highlight */
-  }
-  
-  
+}
+
+.is-reveal .highlight::before {
+  transform: scaleX(1);
+}

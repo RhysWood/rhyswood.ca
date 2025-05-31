@@ -6,7 +6,7 @@ import Proboneo from "../lhouseproj/Proboneo";
 
 const Projects = () => {
   return (
-    <section className="bg-riceorange pb-20">
+    <section className="bg-riceorange pb-20"> 
       <div>
         <div className="mb-20 text-center">
           <h1 className="text-3xl mb-5 sm:text-4xl lg:text-3xl font-NeueMontrealBold text-orange-600 pt-20">
@@ -16,11 +16,11 @@ const Projects = () => {
           </h1>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto auto-rows-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto pb-20">
           <TinyApp />
           <Tweeter />
           <LightBnb />
-          <Proboneo />
+           <Proboneo />
         </div>
       </div>
     </section>
